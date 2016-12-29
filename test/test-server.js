@@ -28,6 +28,7 @@ describe('Shopping List', function() {
         });
     });
     var id = null;
+    
    
     it('should list items on GET', function(done) {
         chai.request(app)
@@ -40,7 +41,7 @@ describe('Shopping List', function() {
                 res.body.should.be.a('array');
                 res.body.should.have.length(3);
                 res.body[0].should.be.a('object');
-                res.body[0].should.have.property('_id');
+                //res.body[0].should.have.property('_id');
                 res.body[0].should.have.property('name');
                 res.body[0].name.should.be.a('string');
                 res.body[0].name.should.equal('Broad beans');
@@ -70,7 +71,7 @@ describe('Shopping List', function() {
 
     it('should edit an item on PUT', function(done) {
         chai.request(app)
-            .put('/items/' + _id)
+            .put('/items/' + id)
             .send({
                 'name': 'Eggs'
             })
@@ -88,14 +89,15 @@ describe('Shopping List', function() {
 
     it('should delete an item on delete', function(done) {
         chai.request(app)
-            .delete('/items/' + _id)
+            .delete('/items/' + id)
             .end(function(err, res) {
-                should.equal(err, null);
+                console.log(res.body);
                 res.should.have.status(201);
                 res.should.be.json;
-                res.body.should.have.property('ok');
-                res.body.ok.should.be.a('number');
-                res.body.ok.should.equal(1);
+                res.body.should.have.property('_id');
+                res.body.should.have.property('name');
+                //res.body.ok.should.be.a('number');
+                //res.body.ok.should.equal(1);
                 done();
             });
     });

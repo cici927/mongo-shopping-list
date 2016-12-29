@@ -60,6 +60,7 @@ app.delete('/items/:id', function(req, res) {
                 message: 'Internal Server Error'
             });
         }
+        console.log(item);
         res.status(201).json(item);
     });
 });
