@@ -8,3 +8,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: Tp2uBaS1twWlrLwHY1tyn3rAircdIwO2dhUKDpexm04qeWWvKVDoiYJlveM1Pno73Z6J48VHkcMszEcrld0bIePoL4UZdv76jKm1AAZsfOWuh/kZ4Aav2U/1CmxQga80lAVGqdp6Knywo5KAdWz7tIGA6FSVaHXwbVO75jm8xfv5gDx35wly3UUqRUXf9ZTzeqzzePJjXRkRyGwM1m7IE/6vDvDcSbHnQIsQnHrsWDWe/0HdZ95NrXVocEg6c3QRjoh5tCZUDG+T8E6jn+EVJdajOdAU8wdioRTmrW/Jpk9S8DgKP9kYncik7Hs4YqQTMOZBrRAl4z1KX7KFHmR7Fti4XXLrrw+CDjF3osZ75lgksoU+X2Ix7yQ3qtLVuUFfr12V7Kn7Ya9z+vg6MQCrYKOBlaBcqdwiqqn8utxhC8O2c4vnq46Y8rYV9jvleUqSydaYV6/67z52Sgbj1Q2lhHIk+RUs/GvHIpjbTgqWjjzyJOVFqyzQWXKmd/tU1sn1H3VjpQLXOQKfrCzsL1UQohsp6tI91+QR52SO8JzN1QrEqLy2BAX0aKaNu/DzOvWvCyC+lfbqTCHEaLrAHVs4fWVSq+Gk5tU3c0fvnHFC+bW5TXrdIZeH/SxtJuIfTTJsFD/CAS3dHXqzn3jkHuUfy7SDsvQvmRie2B8Ku+p7cgY=
+  app: guarded-taiga-17605
+  on:
+    repo: cici927/mongo-shopping-list
